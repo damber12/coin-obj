@@ -8,10 +8,10 @@ let coin = {
     },
     toString: function() {
         if (this.state === 0){
-            return "Head"
+            return "headcoins"
         }
         else {
-            return "Tail"
+            return "tailcoin"
         }
         /* 2. Return the string "Heads" or "Tails", depending on whether
            "this.state" is 0 or 1. */
@@ -20,11 +20,12 @@ let coin = {
         let image = document.createElement('img');
         
         if (this.state === 0){
-             image.src = './images/head.png'
+             image.src = './images/headcoins.png'
         }
         else {
-            image.src = './images/tails.jpeg'
+            image.src = './images/tailcoin.png'
         }
+        
         /* 3. Set the properties of this image element to show either face-up
            or face-down, depending on whether this.state is 0 or 1.*/
         return image;
