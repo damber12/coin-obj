@@ -1,4 +1,3 @@
-
 const Coin = {
     state: 0,
     flip: function () {
@@ -8,6 +7,15 @@ const Coin = {
             this.state = 0;
         } else {
             this.state = 1;
+        }
+    },
+    toString: function () {
+        // 2. Return the string "Heads" or "Tails", depending on whether
+        //    "this.state" is 0 or 1.
+        if(this.state === 0) {
+            return "Heads" + " ";
+        } else {
+            return "Tails" + " ";
         }
     },
     toHTML: function () {
@@ -20,18 +28,19 @@ const Coin = {
             // Eric showed a different way to type the same info-
             // compare the if statement to the else statement and
             // notice the differences.
-            image.width = "90";
-            image.height = "90";
-            
+            image.setAttribute("width", "128");
+            image.setAttribute("height", "128");
+            // optional - set alt text for image
+            // image.setAttribute("alt", "Heads-up coin");
         } else {
             image.src = "./images/tailcoin.png"
-            image.width = "90";
-            image.height = "90";
-            
+            image.width = "128";
+            image.height = "128";
+            image.alt = "Tails-up coin";
         }
         return image;
     }
-}
+};
 
 function display20Flips() {
     const results = [];
@@ -62,4 +71,7 @@ function display20Images() {
 // the image results
 let lineBreak = document.createElement("div")
 lineBreak.style.marginBottom = "50px"
+
+display20Flips();
+document.querySelector('body').appendChild(lineBreak);
 display20Images();
